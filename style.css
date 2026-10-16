@@ -112,7 +112,7 @@ header {
             rgba(0, 0, 0, 0.20),
             rgba(0, 0, 0, 0.20)
         ),
-        url("img/img-portada.jpeg");
+        url("img-portada.jpeg");
 
     background-size: cover;
     background-position: center 30%;
