@@ -1,0 +1,1212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #111111;
+
+    color: white;
+
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+header {
+    background-color: rgba(0, 0, 0, 0.95);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 10px 45px;
+
+    position: sticky;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #292929;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* LOGO */
+
+.logo img {
+    width: 115px;
+    height: auto;
+    display: block;
+}
+
+
+/* MENÚ */
+
+.menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: normal;
+
+    line-height: 1;
+
+    transition: color 0.3s ease;
+
+}
+
+
+.menu a:hover {
+
+    color: #e00000;
+
+}
+
+
+/* CAMBIO DE COLOR AL PASAR EL MOUSE */
+
+
+
+
+/* =========================
+   PORTADA
+========================= */
+
+
+#inicio.hero {
+    min-height: 85vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.20),
+            rgba(0, 0, 0, 0.20)
+        ),
+        url("img/img-portada.jpeg");
+
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+}
+
+
+.hero {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #222222;
+
+}
+
+
+.hero h1 {
+
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #ffffff;
+
+    text-shadow:
+        2px 3px 4px #000000,
+        0 0 15px rgba(0, 0, 0, 0.8);
+
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.hero p {
+
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 30px;
+
+    text-shadow:
+        1px 2px 4px #000000,
+        0 0 10px rgba(0, 0, 0, 0.8);
+
+}
+
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+
+.boton-presupuesto {
+
+    display: inline-block;
+
+    background-color: #d90000;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 15px 30px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+
+}
+
+
+.boton-presupuesto:hover {
+
+    background-color: #ff0000;
+
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+
+    padding: 90px 8%;
+
+}
+
+
+h2 {
+
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.subtitulo {
+
+    text-align: center;
+
+    color: #aaaaaa;
+
+    margin-bottom: 50px;
+
+}
+
+
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.servicios {
+
+    background-color: #111111;
+
+}
+
+
+.servicios-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.servicio {
+
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background-color: #222222;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   ESPACIO TEMPORAL PARA IMAGEN
+========================= */
+
+.servicio-sin-imagen {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #2a2a2a;
+
+    color: #555555;
+
+    font-size: 18px;
+
+}
+
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.servicio img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+
+}
+
+
+
+/* =========================
+   CAPA AL PASAR EL MOUSE
+========================= */
+
+.servicio-overlay {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.80);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+
+}
+
+
+/* TÍTULO */
+
+.servicio-overlay h3 {
+
+    color: #e00000;
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* DESCRIPCIÓN */
+
+.servicio-overlay p {
+
+    color: white;
+
+    line-height: 1.6;
+
+    font-size: 16px;
+
+}
+
+
+
+/* =========================
+   EFECTO HOVER
+========================= */
+
+.servicio:hover .servicio-overlay {
+
+    opacity: 1;
+
+}
+
+
+.servicio:hover img {
+
+    transform: scale(1.08);
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background-color: #000000;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #888888;
+
+}
+
+/* =========================
+   UBICACIÓN
+========================= */
+
+.ubicacion {
+
+    background-color: #111111;
+
+}
+
+
+.ubicacion-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.ubicacion-info {
+
+    background-color: #1c1c1c;
+
+    padding: 40px;
+
+}
+
+
+.ubicacion-info h3 {
+
+    font-size: 28px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.ubicacion-info p {
+
+    margin-bottom: 20px;
+
+    color: #cccccc;
+
+    line-height: 1.6;
+
+}
+
+
+.boton-mapa {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 14px 25px;
+
+    background-color: #d90000;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: background-color 0.3s ease;
+
+}
+
+
+.boton-mapa:hover {
+
+    background-color: #ff0000;
+
+}
+
+
+.mapa {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+.mapa iframe {
+
+    display: block;
+
+    width: 100%;
+
+    border: none;
+
+}
+
+
+/* =========================
+   UBICACIÓN - CELULAR
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .ubicacion-contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .ubicacion-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ubicacion-mapa {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .ubicacion-mapa iframe {
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+        display: block;
+    }
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+
+    background-color: #050505;
+
+    padding-top: 110px;
+
+    padding-bottom: 110px;
+
+}
+
+
+.contacto-titulo {
+
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+
+}
+
+
+.contacto-titulo span {
+
+    color: #e00000;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+}
+
+
+.contacto-titulo h2 {
+
+    margin-top: 15px;
+
+    font-size: 48px;
+
+}
+
+
+.contacto-titulo p {
+
+    margin-top: 20px;
+
+    color: #999999;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* TARJETAS */
+
+.contacto-grid {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.contacto-card {
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    background-color: #151515;
+
+    border: 1px solid #292929;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.contacto-card:hover {
+
+    background-color: #1f1f1f;
+
+    border-color: #e00000;
+
+    transform: translateX(8px);
+
+}
+
+
+
+/* ICONOS */
+
+.contacto-icono {
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #222222;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    border-radius: 50%;
+
+}
+
+
+
+/* TEXTO PEQUEÑO */
+
+.contacto-card span {
+
+    color: #777777;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* TÍTULO */
+
+.contacto-card h3 {
+
+    font-size: 22px;
+
+    margin: 5px 0;
+
+}
+
+
+/* DESCRIPCIÓN */
+
+.contacto-card p {
+
+    color: #888888;
+
+    font-size: 14px;
+
+}
+
+
+/* FLECHA */
+
+.flecha {
+
+    font-size: 25px;
+
+    color: #e00000;
+
+    transition: transform 0.3s ease;
+
+}
+
+
+.contacto-card:hover .flecha {
+
+    transform: translateX(7px);
+
+}
+
+
+
+/* PARTE INFERIOR */
+
+.contacto-final {
+
+    text-align: center;
+
+    margin-top: 60px;
+
+}
+
+
+.contacto-final p {
+
+    color: #777777;
+
+    margin-bottom: 10px;
+
+}
+
+
+.contacto-final a {
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+
+}
+
+
+.contacto-final a:hover {
+
+    color: #e00000;
+
+}
+
+.horarios {
+
+    max-width: 900px;
+
+    margin: 0 auto 35px;
+
+    padding: 18px 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background-color: #111111;
+
+    border: 1px solid #292929;
+
+}
+
+
+.estado-horario {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #999999;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.punto-horario {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    transition: 0.3s ease;
+
+}
+
+
+.punto-horario.abierto {
+
+    background-color: #35d06f;
+
+    box-shadow: 0 0 10px rgba(53, 208, 111, 0.7);
+
+}
+
+
+.punto-horario.cerrado {
+
+    background-color: #e00000;
+
+    box-shadow: 0 0 10px rgba(224, 0, 0, 0.7);
+
+}
+
+
+.horario-texto {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.horario-texto strong {
+
+    color: white;
+
+    font-size: 15px;
+
+}
+
+
+.horario-texto span {
+
+    color: #e00000;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+/* =========================================
+   DISEÑO PARA CELULARES Y TABLETS
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    section {
+        scroll-margin-top: 90px;
+    }
+}
+
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    /* ENCABEZADO */
+
+    header {
+
+        padding: 10px 25px;
+
+    }
+
+
+    .logo img {
+
+        width: 100px;
+
+    }
+
+
+    .menu {
+
+        gap: 18px;
+
+    }
+
+
+    .menu a {
+
+        font-size: 14px;
+
+    }
+
+
+    /* PORTADA */
+
+    .hero h1 {
+
+        font-size: 45px;
+
+    }
+
+
+    /* SERVICIOS */
+
+    .servicios-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    /* UBICACIÓN */
+
+    .ubicacion-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* CONTACTO */
+
+    .contacto-titulo h2 {
+
+        font-size: 40px;
+
+    }
+
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+
+    /* =========================
+       ENCABEZADO
+    ========================== */
+
+    header {
+
+        padding: 10px 18px;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+
+    .logo img {
+
+        width: 90px;
+
+    }
+
+
+    .menu {
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 14px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .menu a {
+
+        font-size: 13px;
+
+    }
+
+
+    /* =========================
+       PORTADA
+    ========================== */
+
+    .hero {
+
+        min-height: 75vh;
+
+        padding: 30px 20px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 38px;
+
+        line-height: 1.1;
+
+    }
+
+
+    .hero p {
+
+        font-size: 18px;
+
+    }
+
+
+    /* =========================
+       SECCIONES
+    ========================== */
+
+    section {
+
+        padding: 65px 20px;
+
+    }
+
+
+    h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    /* =========================
+       SERVICIOS
+    ========================== */
+
+    .servicios-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .servicio {
+
+        aspect-ratio: 1 / 1;
+
+    }
+
+
+    /* =========================
+       UBICACIÓN
+    ========================== */
+
+    .ubicacion-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .ubicacion-info {
+
+        padding: 25px;
+
+    }
+
+
+    .mapa iframe {
+
+        height: 320px;
+
+    }
+
+
+    /* =========================
+       HORARIO
+    ========================== */
+
+    .horarios {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+
+        padding: 20px;
+
+    }
+
+
+    .horario-texto {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+
+    /* =========================
+       CONTACTO
+    ========================== */
+
+    .contacto-titulo h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .contacto-titulo p {
+
+        font-size: 15px;
+
+    }
+
+
+    .contacto-card {
+
+        grid-template-columns: 50px 1fr auto;
+
+        padding: 20px;
+
+        gap: 15px;
+
+    }
+
+
+    .contacto-icono {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 13px;
+
+    }
+
+
+    .contacto-card h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .contacto-card p {
+
+        font-size: 13px;
+
+    }
+
+
+    /* =========================
+       BOTÓN PRESUPUESTO
+    ========================== */
+
+    .boton-presupuesto {
+
+        padding: 14px 25px;
+
+        font-size: 15px;
+
+    }
+
+    
+
+}
